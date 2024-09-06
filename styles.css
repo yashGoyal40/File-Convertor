@@ -1,0 +1,129 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #3d3d3d; /* Darker black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #8d8989; /* Lighter grey for text */
+}
+
+.main-container, .box, .upload-box, .output-container {
+    background-color: #1F1F1F; /* Dark grey for containers */
+    color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.main-container {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.box {
+    width: 80%;
+    padding: 20px;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    background-color: transparent;
+}
+
+.upload-box {
+    width: 100%;
+    background-color: #292929; /* Slightly lighter grey */
+    padding: 15px;
+    border: 1px solid #333; /* Border matching the background */
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 10px 25px;
+    background-color: #1e1d1d; /* Bright green like CRED’s accent color */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #1e1d1d; /* Darker green on hover */
+    transform: scale(1.05);
+}
+
+.output-container {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #1F1F1F;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.output-container pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #E0E0E0;
+    font-family: 'Courier New', monospace;
+}
+
+.animate {
+    left: 0 !important;
+    transform: translateX(0) !important;
+    width: 40% !important; 
+    margin-left: 2.2%; 
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        height: auto;
+    }
+
+    .main-container {
+        width: 100%;
+        height: auto;
+        position: static;
+        transform: none;
+        transition: none;
+        margin-bottom: 20px;
+    }
+
+    .box {
+        width: 90%;
+    }
+
+    .output-container {
+        width: 100%;
+        height: auto;
+        position: static;
+        display: block;
+    }
+
+    .animate {
+        left: 0 !important;
+        transform: translateX(0) !important;
+        width: 100% !important; 
+        margin-left: 0 !important; 
+    }
+}

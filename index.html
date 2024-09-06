@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container" id="mainContainer">
+        <h1>File Converter</h1>
+        <div class="option-box">
+            <button onclick="showConverter('csvToJson')" class="btn"><i class="fas fa-file-csv"></i> CSV to JSON</button>
+            <button onclick="showConverter('jsonToCsv')" class="btn"><i class="fas fa-file-code"></i> JSON to CSV</button>
+        </div>
+        <div id="converter" style="display: none;">
+            <input type="file" id="fileInput" accept=".csv, .json">
+            <button onclick="convertFile()" class="btn"><i class="fas fa-file-import"></i> Convert</button>
+        </div>
+    </div>
+
+    <div class="output-container" id="outputContainer">
+        <pre id="output"></pre>
+        <button onclick="copyOutput()" class="btn"><i class="fas fa-copy"></i> Copy</button>
+        <button onclick="downloadConvertedFile()" class="btn"><i class="fas fa-download"></i> Download</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

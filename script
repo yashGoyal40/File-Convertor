@@ -1,0 +1,36 @@
+//lambda nodejs16
+exports.handler = async (event) => {
+    const csvContent = event.body;
+
+    const lines = csvContent.split("\n");
+    const result = [];
+    const headers = lines[0].split(",");
+
+    for (let i = 1; i < lines.length; i++) {
+        const obj = {};
+        const currentLine = lines[i].split(",");
+        if (currentLine.length === headers.length) {
+            for (let j = 0; j < headers.length; j++) {
+                obj[headers[j].trim()] = currentLine[j].trim();
+            }
+            result.push(obj);
+        }
+    }
+
+    const json = JSON.stringify(result, null, 2);
+
+    return {
+        statusCode: 200,
+        body: json,
+        headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+             'Access-Control-Allow-Methods': 'OPTIONS,POST,GET,PUT,DELETE', // Allowed methods
+            'Access-Control-Allow-Headers': 'Content-Type' // Allowed headers
+
+        }
+    };
+};
+
+//a rest api gateway is created and the lambda function is attached to it post method is created and CORES are allowed
+

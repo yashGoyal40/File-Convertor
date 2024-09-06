@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to JSON Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="main-container" id="mainContainer">
+        <div class="box">
+            <h1>CSV to JSON Converter</h1>
+            <div class="upload-box">
+                <input type="file" id="fileInput" accept=".csv">
+                <button onclick="convertFile()" class="btn"><i class="fas fa-file-import"></i> Convert</button>
+            </div>
+        </div>
+    </div>
+    <div class="output-container" id="outputContainer">
+        <pre id="output"></pre>
+        <button onclick="copyOutput()" class="btn"><i class="fas fa-copy"></i> Copy</button>
+        <button onclick="downloadJson()" class="btn"><i class="fas fa-download"></i> Download</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
